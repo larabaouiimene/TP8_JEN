@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       post {
         always {
-          mail(subject: 'Deploiement d\'une nouvelle version', body: 'Bonjour, Je vous informe qu\'une nouvelle version est disponible sur le github. Cordialement.', from: 'ij_terras@esi.dz', to: 'ij_terras@esi.dz')
+          mail(subject: 'Deploiement d\'une nouvelle version', body: 'Bonjour, Je vous informe qu\'une nouvelle version est disponible sur le github. Cordialement.', from: 'kn_larbaoui@esi.dz', to: 'kn_larbaoui@esi.dz')
         }
 
       }
@@ -39,7 +39,7 @@ pipeline {
     stage('Quality gate') {
       post {
         failure {
-          mail(subject: 'Erreur Quality Gate', body: 'Bonjour, le code soumis a un statut Quality Gates : failed. Cordialement.', from: 'ij_terras@esi.dz', to: 'ij_terras@esi.dz')
+          mail(subject: 'Erreur Quality Gate', body: 'Bonjour, le code soumis a un statut Quality Gates : failed. Cordialement.', from: 'kn_larbaoui@esi.dz', to: 'kn_larbaoui@esi.dz')
         }
 
       }
@@ -56,7 +56,7 @@ pipeline {
 
     stage('Slack Notification') {
       steps {
-        slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'T02SN5X767J/B03097P5X4P/i2GOARDJlNfyRVR3aVR85Bxn', message: 'Une nouvelle version est disponible')
+        slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'T02SMBGA6BE/B0355KTRSF2/znMvBg1tkemZQzs6m2ERCjGM', message: 'Une nouvelle version est disponible')
       }
     }
 
