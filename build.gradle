@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id "org.sonarqube" version "3.1.1"
+    id 'maven-publish'
+}
+
+group 'com.example'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+publishing {
+    repositories {
+        maven {
+            url 'https://mymavenrepo.com/repo/wNYXCYiD5duElCg9hCgq/'
+            credentials {
+                username 'myMavenRepo'
+                password '123456789'
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+
+
+
+
+
+
+dependencies {
+    testImplementation 'io.cucumber:cucumber-java:6.0.0'
+    testImplementation 'io.cucumber:cucumber-junit:6.0.0'
+    testImplementation 'junit:junit:4.12'
+}
+
+
